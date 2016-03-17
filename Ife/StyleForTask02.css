@@ -15,18 +15,17 @@ body{
     width: 180px;
     height: 100px;
 }
-.header_nav{
+.nav{
     float: right;
-    margin-top: 30px;
 }
 
-.header_ul li {
+.nav li {
     float: left;
-    margin-right: 18px;
+    margin: 20px;
 }
-.header_ul li a:link,a:visited{
+.nav li a:link,a:visited{
     color: #FFF;
-    text-decoration-line:none;
+    text-line:none;
     vertical-align: middle;
 }
 .h1_ul a{
@@ -63,6 +62,15 @@ body{
 }
 .tr1{
     background-color: #dedede;
+}
+.table{
+    border: 1px solid #dedede;
+    border-collapse: collapse;
+    /*用于合并表格相邻的线 表格默认属性为separate （分离相邻边框属性）*/
+}
+.table td{
+    border: 1px solid #dedede;
+    margin: 0px;
 }
 .table a:link{
     color: #000;
