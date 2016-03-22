@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>IFE JavaScript Task 01</title>
+</head>
+<body onload="getList()">
+
+<h3>污染城市列表</h3>
+<ul id="aqi-list">
+    <!--
+        <li>第一名：福州（样例），10</li>
+          <li>第二名：福州（样例），10</li> -->
+</ul>
+
+<script type="text/javascript">
+
+    var aqiData = [
+        ["北京", 90],
+        ["上海", 50],
+        ["福州", 10],
+        ["广州", 50],
+        ["成都", 90],
+        ["西安", 100]
+    ];
+//    alert(aqiData[1][1]);
+    function getList(){
+        var newArray = new Array();
+        var str='';
+//        newArray.push(1,1);  js中 不能对不定长数组 直接利用a[i]=12 类似方式赋值  利用push添加元素到不定长数组中，因为其未划分空间
+       for(var i=0;i<aqiData.length;i++){
+           if(aqiData[i][1]>60){
+                newArray.push(aqiData[i]);//符合条件数组信息录入
+               newArray.sort(function(a,b){
+                   return b[1]-a[1] ;//数值越大 越往前排
+               })
+           }
+        }
+
+        for(var m=0;m<newArray.length;m++){
+            str += "<li>"+newArray[m][0]+","+newArray[m][1]+"</li>";//数组展示
+        }
+        var ul = document.getElementById("aqi-list");
+        ul.innerHTML = str;
+    }
+
+    (function () {
+
+        /*
+         在注释下方编写代码
+         遍历读取aqiData中各个城市的数据
+         将空气质量指数大于60的城市显示到aqi-list的列表中
+         */
+
+    })();
+
+</script>
+</body>
+</html>
